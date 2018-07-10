@@ -181,3 +181,14 @@
 // db.notes.find({
 //   title: {$regex: /[a-z]/, $not: /dogs/i},
 // });
+
+//better solution for ^
+
+// db.notes.find(
+//   {
+//     $and: [
+//       {title: {$not: /dogs/}},
+//       {title: {$exists: true}}
+//     ]
+//   }
+// );
